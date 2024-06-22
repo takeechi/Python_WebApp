@@ -19,3 +19,7 @@ def show_html():
 @app.route('/exercise_html')
 def exercise_html():
     return render_template('exercise.html')
+@app.route('/exercise')
+def exercise():
+    my_name = request.args.get('my_name')
+    return render_template('exercise_answer.html', name=my_name)
