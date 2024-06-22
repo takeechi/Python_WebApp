@@ -11,3 +11,6 @@ def index():
 @app.route('/test_request')
 def test_request():
     return f'test_request:{request.args.get("dummy")}'
+@app.route('/exercise_request/<exercise_param>')
+def exercise_request(exercise_param):
+    return f'exercise_request:{exercise_param}'
