@@ -16,3 +16,6 @@ def exercise_request(exercise_param):
 @app.route('/show_html')
 def show_html():
     return render_template('test_html.html')
+@app.route('/exercise_html')
+def exercise_html():
+    return render_template('exercise.html')
