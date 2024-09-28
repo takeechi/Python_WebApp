@@ -1,6 +1,10 @@
 from flask import Flask, request, render_template, jsonify
+from test_model_bk import Human
+from sqlalchemy import create_engine
+from sqlalchemy.orm import Session
 
 app = Flask(__name__)
+engine = create_engine("sqlite:///test_db")
 @app.route('/')
 def inex():
     return 'Response Data'
