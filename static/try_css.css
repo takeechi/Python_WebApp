@@ -1,6 +1,10 @@
-td {
-    color: cyan;
+* {
+    text-align: center;
+    margin: 0 auto;
 }
 th {
     color: magenta;
+}
+td {
+    color: cyan;
 }
