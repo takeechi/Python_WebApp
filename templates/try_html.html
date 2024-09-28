@@ -2,10 +2,19 @@
 <html>
     <head>
         <link rel="stylesheet" href="{{url_for('static', filename='try_css.css')}}">
+        <script src="{{url_for('static', filename='try_js.js')}}"></script>
     </head>
     <body>
         <form method="POST" action="http://127.0.0.1:5000/show_data">
-            <table>
+            <select name="select" id="select_id" onchange="change_by_select()">
+                <option value="red">赤</option>
+                <option value="green">緑</option>
+                <option value="blue">青</option>
+                <option value="yellow">黄</option>
+                <option value="inherit">元に戻す</option>
+            </select>
+            <input type="button" name="button" value="ボタン" onclick="change_table();">
+            <table id="table_id">
                 <tr>
                     <th><label for="name">名前</label></th>
                     <th><label for="color">好きな色</label></th>
