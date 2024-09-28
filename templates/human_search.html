@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <script src="{{url_for('static', filename='human_search.js')}}"></script>
+        <link rel="stylesheet" href="{{url_for('static', filename='human_search.css')}}">
         <title>検索用htmlファイル</title>
     </head>
     <body>
-        <form action="http://127.0.0.1:5000/human_result">
+        <form action="http://127.0.0.1:5000/human_result" onsubmit="return check_input();">
             検索対象：<br>
-            身長が<input type="text" value="" name="search_height"/>以上の人<br>
+            身長が<input type="text" value="" name="search_height" id="searchHeight"/><select id="height_moreless"><option>以上</option><option>以下</option></select><br>
+            <select id="rule_type"><option value="or">または</option><option value="and">なおかつ</option></select><br>
+            体重が<input type="text" value="" name="search_weight" id="searchWeight"/><select id="weight_moreless"><option>以上</option><option>以下</option></select>の人<br>
             <input type="submit" value="検索"/>
         </form>
     </body>
