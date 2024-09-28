@@ -27,6 +27,17 @@ def exercise_html():
 def exercise():
     my_name = request.args.get('my_name')
     return render_template('exercise_answer.html', name=my_name)
+@app.route('/human_search')
+def human_search():
+    return render_template('human_search.html')
+@app.route('/human_result')
+def human_result():
+    search_height = request.args.get("search_height")
+    with Session(engine) as session:
+        humans = session.query(Human).filter(Human.height > search_height)
+    return render_template(
+        "./human_result.html", humans=humans, search_height=search_height
+    )
 
 @app.route('/try_rest', methods=['POST'])
 def try_rest():
