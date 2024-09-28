@@ -38,6 +38,15 @@ def human_result():
     return render_template(
         "./human_result.html", humans=humans, search_height=search_height
     )
+@app.route('/try_html')
+def try_html():
+    return render_template('try_html.html')
+@app.route('/show_data', methods=['GET', 'POST'])
+def show_data():
+    print(f'name: {request.form["name"]}')
+    print(f'color: {request.form["color"]}')
+    print(f'wether: {request.form["wether"]}')
+    return render_template("try_html.html")
 
 @app.route('/try_rest', methods=['POST'])
 def try_rest():
